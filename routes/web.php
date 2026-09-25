@@ -31,23 +31,5 @@ Route::get('/contect', function () {
     return view('contact');
 });
 
-route::post('contact-save', [ContactController::class, 'save'])->name('contact-save');
-
 /* backend-----------------------------------------------------------------------------*/
  
-
-
-Route::get('/user', function () {
-    return view('dashboard.showuser');
-});
-
-route::GET('admin', [AdminController::class, 'index'])->middleware(['admin'])->name('admin');
-
-
-route::get('showuser/{id}', [AdminController::class, 'getuser'])->name('show-user');
-
-
-route::delete('destroy/{id}', [AdminController::class, 'destroy'])->name('delete-user');
-
-
-route::PATCH('markAsRead/{id}', [AdminController::class, 'markAsRead'])->name('contact.read');
