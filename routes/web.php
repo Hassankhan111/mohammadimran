@@ -8,7 +8,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('home');
+    return view('index');
 });
 
 Route::get('/about', function () {
@@ -42,8 +42,6 @@ Route::get('/user', function () {
 });
 
 route::GET('admin', [AdminController::class, 'index'])->middleware(['admin'])->name('admin');
-require __DIR__.'/auth.php';
-
 
 
 route::get('showuser/{id}', [AdminController::class, 'getuser'])->name('show-user');
@@ -53,4 +51,3 @@ route::delete('destroy/{id}', [AdminController::class, 'destroy'])->name('delete
 
 
 route::PATCH('markAsRead/{id}', [AdminController::class, 'markAsRead'])->name('contact.read');
-require __DIR__.'/auth.php';
